@@ -18,7 +18,7 @@ RUN apt-get update &&\
 COPY requirements.txt .
 RUN $PIP_INSTALL -r requirements.txt
 # GPU specific packages
-RUN $PIP_INSTALL cupy-cuda12x pynvjpeg
+RUN $PIP_INSTALL "numpy<2" cupy-cuda12x pynvjpeg
 
 WORKDIR /app
 COPY api_trt /app/api_trt
